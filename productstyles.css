@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f6e5c6;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    width: 100%;
+    background-color: #f6e5c6;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #000;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+header nav {
+    display: flex;
+}
+
+.nav-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-left: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Hamburger Menu Styles */
+#hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    header nav {
+        display: none;
+    }
+
+    #hamburger {
+        display: block;
+    }
+
+    #nav-links.active {
+        display: flex;
+        flex-direction: column;
+        background-color: #f6e5c6;
+        position: absolute;
+        top: 60px;
+        width: 100%;
+        left: 0;
+        z-index: 999;
+    }
+}
+
+main {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.section-header {
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 20px 0;
+    padding: 10px 20px;
+    border-top: 2px solid #000;
+}
+
+footer {
+    background-color: #f6e5c6;
+    padding: 20px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 2px solid #000;
+    text-align: center;
+}
+
+.image-grid {
+    display: grid;
+    gap: 10px;
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 20px;
+}
+
+.image-grid img {
+    width: 100%;
+    height: auto;
+    border: 2px solid #000;
+}
+
+/* Responsive grid layout */
+@media (min-width: 768px) {
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .image-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
